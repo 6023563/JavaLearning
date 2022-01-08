@@ -1,0 +1,38 @@
+git config --global user.name="handj"
+git config --global user.email="email"
+
+git init
+
+git add
+git commit -m "comment"
+
+git status
+
+git log
+git log --pretty=online
+git --online
+git reflog
+
+git reset --hard XXX   //全部动
+git reset --mixed XXX  //工作区不动,暂存区和本地区都动
+git reset --soft XXX  //工作区和暂存区不动,本地区动
+
+git diff    //比较所有文件
+git diff Test.txt   //工作区与暂存区的比较
+git diff 4d3a3c7 Test3.txt 暂存区与本地库的比较
+
+git branch
+git branch branch01
+
+git checkout branch01  //切换到branch01分支
+
+//在master分支和branch01分支中各自修改代码
+
+//切换到合并后需要保留的分支
+git checkout master
+git merge branch01  //把branch01合并到master分支
+
+//如果有提示冲突(conflict)手工解决修改代码解决冲突,然后重新提交
+git add test3.txt
+git commit -m "resolve conflict"  //合并提交操作,后面不能跟文件名
+
